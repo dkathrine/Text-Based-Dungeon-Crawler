@@ -570,7 +570,9 @@ Light seems to be eminating from glowing orbs along the wall.`);
         break;
     }
   }
+  
 };
+
 
 startRoom();
 
