@@ -59,7 +59,6 @@ const gameplayBattle = (player, enemy) => {
         player.level.level++;
         player.level.exp = player.level.exp - 50;
       }
-      player.gold = player.gold + enemy.gold;
       player.hp = 100 * player.level.level;
       player.mp = 100 * player.level.level;
       enemy.hp = randomLevel * 30;
@@ -140,7 +139,6 @@ class Player {
     // "Static values" of our player
 
     this.level = new Level(1); // levels up with constant exp
-    this.gold = 0;
     this.skills = [];
     this.score = 0;
   }
@@ -195,7 +193,6 @@ class Enemy extends Player {
     super(name);
     this.hp = randomLevel * 35;
     this.exp = randomLevel * 10;
-    this.gold = randomLevel * 5;
     this.level = new Level(randomLevel);
   }
 
