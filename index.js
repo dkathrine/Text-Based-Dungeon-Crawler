@@ -337,7 +337,7 @@ console.log(
 Oh, so your name is ${playername}.
 A trial from god was stowed upon you!
 You have to overcome 10 fights in order to end this challenge.
-Good Luck and let the force be with you.
+Good Luck and may the force be with you.
 <><><><><><><><><><><><><><><><><>`.blue
 );
 
