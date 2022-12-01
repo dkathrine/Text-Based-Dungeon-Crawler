@@ -61,7 +61,7 @@ const gameplayBattle = (player, enemy) => {
       }
       player.hp = 100 * player.level.level;
       player.mp = 100 * player.level.level;
-      enemy.hp = randomLevel * 30;
+      enemy.hp = randomLevel() * 35;
       player.score++;
       console.log(`Score: ${player.score}`);
       if (!player.skills.includes(atomic)) {
@@ -186,14 +186,18 @@ class Player {
   }
 }
 
-let randomLevel = Math.floor(Math.random().toFixed(1) * 5) + 1;
+// let randomLevel = Math.floor(Math.random().toFixed(1) * 5) + 1;
+
+const randomLevel = () => {
+  return Math.floor(Math.random().toFixed(1) * 5) + 1;
+}
 
 class Enemy extends Player {
   constructor(name) {
     super(name);
-    this.hp = randomLevel * 35;
-    this.exp = randomLevel * 10;
-    this.level = new Level(randomLevel);
+    this.hp = randomLevel() * 35;
+    this.exp = randomLevel() * 10;
+    this.level = new Level(randomLevel());
   }
 
   showEnemy() {
@@ -477,7 +481,7 @@ Your torch allows you to see warped and molten metal remnants, pillaged and dism
         if (
           readlineSync.keyInYN(
             `You've encountered a ${eatingHall.enemy.name} wanna fight?`
-              .brightRed
+            .brightRed
           )
         ) {
           //Y
@@ -531,7 +535,7 @@ An unlit chandalier hangs overhead.`);
         if (
           readlineSync.keyInYN(
             `You've encountered a ${courtHall.enemy.name} wanna fight?`
-              .brightRed
+            .brightRed
           )
         ) {
           //Y
@@ -550,7 +554,7 @@ Light seems to be eminating from glowing orbs along the wall.`);
         if (
           readlineSync.keyInYN(
             `You've encountered a ${summoningRoom.enemy.name} wanna fight?`
-              .brightRed
+            .brightRed
           )
         ) {
           //Y
@@ -567,10 +571,8 @@ Light seems to be eminating from glowing orbs along the wall.`);
         break;
     }
   }
-  
+
 };
 
 
 startRoom();
-
- 
